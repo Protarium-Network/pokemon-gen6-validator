@@ -32,7 +32,7 @@ dotnet run -c Release --project tests/Checks -- http://127.0.0.1:9107   # end to
 ```
 Generate a key: `openssl genrsa -out key.pem 2048`. Needs the .NET 10 SDK.
 
-Not tested on a console.
+Used in practice for Pokemon trades on real consoles.
 
 ## License
 GNU AGPL v3 (see `LICENSE`). [PKHeX.Core](https://github.com/kwsch/PKHeX) is GPL-3.0-or-later; the AGPL is compatible with it (GPLv3 section 13),
