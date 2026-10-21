@@ -1,0 +1,19 @@
+[Unit]
+Description=Gen 6 Pokemon legality validator
+After=network.target
+
+[Service]
+User=gen6validator
+WorkingDirectory=/opt/gen6-validator
+Environment=GEN6V_BIND=127.0.0.1
+Environment=GEN6V_PORT=9107
+Environment=GEN6V_CERTIFICATE_ID=1
+Environment=GEN6V_PRIVATE_KEY_PATH=/opt/gen6-validator/private.key
+# Environment=GEN6V_ACCEPT_ANYTHING=true
+Environment=DOTNET_ROOT=/usr/share/dotnet
+ExecStart=/usr/bin/dotnet /opt/gen6-validator/bin/Gen6Validator.dll
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
